@@ -17,20 +17,15 @@ You can reference a static version of this code by its DOI number: (COMING SOON)
 
 The sound speed estimator can be broken into two two steps:
 1) Generation of coherence factor (CF) images at various focusing speeds of sound from which average sound speed may be estimated: [CoherenceFactorImages.m](CoherenceFactorImages.m) reads the channel data from (ChickenPhantomMultiFocal.mat), creates the stack of CF images, and saves the CF image stack in [SavedCoherenceFactorImages.mat](SavedCoherenceFactorImages.mat).
-2) Tomographic sound speed estimator: [SoundSpeedEstimation.m](SoundSpeedEstimation.m) estimates the average speed of sound from the CF image stack in [SavedCoherenceFactorImages.mat](SavedCoherenceFactorImages.mat), reconstructions the speed of sound using travel-time tomography [during the process]
+2) Tomographic sound speed estimator: [SoundSpeedEstimation.m](SoundSpeedEstimation.m) estimates the average speed of sound from the CF image stack in (SavedCoherenceFactorImages.mat), reconstructions the speed of sound using travel-time tomography, and save the reconstructed speed of sound to (SoundSpeedEstimation.mat). [During the process we save a sparse matrix in [tomography_matrix.mat](tomography_matrix.mat) that relates the pixels in the reconstruction to the travel times projected by the average sound speed estimates.]
 
-1) Conventional dynamic-receive beamforming ([FocTxRecon.m](FocTxRecon.m) and [FocTxRecon.py](FocTxRecon.py))
-2) Virtual source synthetic aperture ([VirtualSourceRecon.m](VirtualSourceRecon.m) and [VirtualSourceRecon.py](VirtualSourceRecon.py))
-3) REFoCUS ([AdjointBasedREFoCUS.m](AdjointBasedREFoCUS.m) and [AdjointBasedREFoCUS.py](AdjointBasedREFoCUS.py))
-4) Full-Waveform Reconstruction in Time Domain ([TimeDomFullWaveRecon.m](TimeDomFullWaveRecon.m) and [TimeDomFullWaveRecon.py](TimeDomFullWaveRecon.py)) and Frequency Domain ([FreqDomFullWaveRecon.m](FreqDomFullWaveRecon.m) and [FreqDomFullWaveRecon.py](FreqDomFullWaveRecon.py))
+The resulting sound speed estimates in (SoundSpeedEstimation.mat) are used by the two distributed aberration correction algorithms to reconstruct an optimally focused ultrasound image from the channel data in (ChickenPhantomMultiFocal.mat):
+1) Eikonal-Corrected DAS Beamforming [EikonalReconFromFullSynthData.m](EikonalReconFromFullSynthData.m) 
+2) Wave-Field Correlation Method [FreqDomShotGatherMig.m](FreqDomShotGatherMig.m)
 
-Please see any supporting functions in [beamforming_functions](beamforming_functions).
+Please see any supporting functions in the following directories for sound speed estimation [sound_speed_estim_functions](sound_speed_estim_functions), DAS beamforming [beamforming_functions](beamforming_functions), ray tracing via the eikonal equation [ray_tracing_functions](ray_tracing_functions), and the wave-field correlation method [angular_spectrum_functions](angular_spectrum_functions).
 
-**Please download the sample data (FocTxDataset.mat) under the [releases](https://github.com/rehmanali1994/FourierDomainBeamformer/releases) tab for this repository, and place that data in the main directory ([FourierDomainBeamformer](https://github.com/rehmanali1994/FourierDomainBeamformer)).**
-
-
-
-
+**Please download the sample data (FocTxDataset.mat) under the [releases](https://github.com/rehmanali1994/DistributedAberrationCorrection/releases) tab for this repository, and place that data in the main directory ([FourierDomainBeamformer](https://github.com/rehmanali1994/DistributedAberrationCorrection)).**
 
 # Sample results
 Here is a tomographic reconstruction of the speed of sound in the medium (the white dots shown here represent the observation points used in the tomographic reconstruction):
