@@ -11,7 +11,7 @@ We provide sample data and algorithms presented in
 
 for the tomographic sound speed estimation technique and the two distributed aberration correction techniques described above. If you use the code/algorithm for research, please cite the above paper.
 
-You can reference a static version of this code by its DOI number: (COMING SOON)
+You can reference a static version of this code by its DOI number: [![DOI](https://zenodo.org/badge/372948277.svg)](https://zenodo.org/badge/latestdoi/372948277)
 
 # Code and Sample Datasets
 
