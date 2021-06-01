@@ -27,7 +27,7 @@ Please see any supporting functions in the following directories for sound speed
 
 **Please download the sample data (ChickenPhantomMultiFocal.mat) under the [releases](https://github.com/rehmanali1994/DistributedAberrationCorrection/releases) tab for this repository, and place that data in the main directory ([FourierDomainBeamformer](https://github.com/rehmanali1994/DistributedAberrationCorrection)).Intermediate files saved during the each step in the process are also provided under [releases](https://github.com/rehmanali1994/DistributedAberrationCorrection/releases) for reference: (SavedCoherenceFactorImages.mat), (tomography_matrix.mat), and (SoundSpeedEstimate.mat).**
 
-# Sample results
+# Sample Results
 Here is a tomographic reconstruction of the speed of sound in the medium (the white dots shown here represent the observation points used in the tomographic reconstruction):
 
 ![](SoundSpeedEstimation.png)
