@@ -17,4 +17,9 @@ You can reference a static version of this code by its DOI number: (COMING SOON)
 
 # Sample results
 Here is a tomographic reconstruction of the speed of sound in the medium (the white dots shown here represent the observation points used in the tomographic reconstruction):
+
 ![](SoundSpeedEstimation.png)
+
+Below we show image reconstruction with (Left) a conventional 1540 m/s DAS beamformer and aberration correction based on the eikonal equation (Middle) and wave-field correlation (Right) techniques:
+
+![](AberrationCorrection.png)
