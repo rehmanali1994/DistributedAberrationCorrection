@@ -15,6 +15,23 @@ You can reference a static version of this code by its DOI number: (COMING SOON)
 
 # Code and Sample Datasets
 
+The sound speed estimator can be broken into two two steps:
+1) Generation of coherence factor (CF) images at various focusing speeds of sound from which average sound speed may be estimated: [CoherenceFactorImages.m](CoherenceFactorImages.m) reads the channel data from (ChickenPhantomMultiFocal.mat), creates the stack of CF images, and saves the CF image stack in [SavedCoherenceFactorImages.mat](SavedCoherenceFactorImages.mat).
+2) Tomographic sound speed estimator: [SoundSpeedEstimation.m](SoundSpeedEstimation.m) estimates the average speed of sound from the CF image stack in [SavedCoherenceFactorImages.mat](SavedCoherenceFactorImages.mat), reconstructions the speed of sound using travel-time tomography [during the process]
+
+1) Conventional dynamic-receive beamforming ([FocTxRecon.m](FocTxRecon.m) and [FocTxRecon.py](FocTxRecon.py))
+2) Virtual source synthetic aperture ([VirtualSourceRecon.m](VirtualSourceRecon.m) and [VirtualSourceRecon.py](VirtualSourceRecon.py))
+3) REFoCUS ([AdjointBasedREFoCUS.m](AdjointBasedREFoCUS.m) and [AdjointBasedREFoCUS.py](AdjointBasedREFoCUS.py))
+4) Full-Waveform Reconstruction in Time Domain ([TimeDomFullWaveRecon.m](TimeDomFullWaveRecon.m) and [TimeDomFullWaveRecon.py](TimeDomFullWaveRecon.py)) and Frequency Domain ([FreqDomFullWaveRecon.m](FreqDomFullWaveRecon.m) and [FreqDomFullWaveRecon.py](FreqDomFullWaveRecon.py))
+
+Please see any supporting functions in [beamforming_functions](beamforming_functions).
+
+**Please download the sample data (FocTxDataset.mat) under the [releases](https://github.com/rehmanali1994/FourierDomainBeamformer/releases) tab for this repository, and place that data in the main directory ([FourierDomainBeamformer](https://github.com/rehmanali1994/FourierDomainBeamformer)).**
+
+
+
+
+
 # Sample results
 Here is a tomographic reconstruction of the speed of sound in the medium (the white dots shown here represent the observation points used in the tomographic reconstruction):
 
