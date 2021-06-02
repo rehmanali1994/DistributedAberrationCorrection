@@ -16,8 +16,7 @@ You can reference a static version of this code by its DOI number: [![DOI](https
 # Code and Sample Datasets
 
 The sound speed estimator can be broken into two two steps:
-1) Generation of coherence factor (CF) images at various focusing speeds of sound from which average sound speed may be estimated: [CoherenceFactorImages.m](CoherenceFactorImages.m) reads the channel data from (ChickenPhantomMultiFocal.mat), creates the stack of CF images, and saves the CF image stack in (SavedCoherenceFactorImages.mat).
---This step is very similar to process seen in https://github.com/rehmanali1994/DixInversion4MedicalUltrasound
+1) Generation of coherence factor (CF) images at various focusing speeds of sound from which average sound speed may be estimated (very similar to process seen in https://github.com/rehmanali1994/DixInversion4MedicalUltrasound): [CoherenceFactorImages.m](CoherenceFactorImages.m) reads the channel data from (ChickenPhantomMultiFocal.mat), creates the stack of CF images, and saves the CF image stack in (SavedCoherenceFactorImages.mat).
 2) Tomographic sound speed estimator: [SoundSpeedEstimation.m](SoundSpeedEstimation.m) estimates the average speed of sound from the CF image stack in (SavedCoherenceFactorImages.mat), reconstructions the speed of sound using travel-time tomography, and save the reconstructed speed of sound to (SoundSpeedEstimate.mat). *During the process we save a sparse matrix in (tomography_matrix.mat) that relates the pixels in the reconstruction to the travel times projected by the average sound speed estimates.*
 
 The resulting sound speed estimates in (SoundSpeedEstimate.mat) are used by the two distributed aberration correction algorithms to reconstruct an optimally focused ultrasound image from the channel data in (ChickenPhantomMultiFocal.mat):
