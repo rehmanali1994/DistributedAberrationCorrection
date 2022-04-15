@@ -7,7 +7,7 @@ Phase aberration correction is the process of applying delay/phase correction to
 
 We provide sample data and algorithms presented in
 
-> Ali, R.; Hyun, D.; Brickson, L.; Dahl, J. "Distributed Aberration Correction Techniques Based on Tomographic Sound Speed Estimates". *Manuscript submitted for publication.*
+> Ali, R.; Hyun, D.; Brickson, L.; Dahl, J. "Distributed Aberration Correction Techniques Based on Tomographic Sound Speed Estimates". IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control (2022).
 
 for the tomographic sound speed estimation technique and the two distributed aberration correction techniques described above. If you use the code/algorithm for research, please cite the above paper.
 
